@@ -85,7 +85,7 @@ We’re committed to delivering **frequent updates**, **enhancements**, and **bu
 - [Download the Tasks App](https://ragu-123.github.io/tasks/)
 
 ---
-### 📥 **To clone and Get Started**
+### **To clone and Get Started**
 1. Clone the repository:
    ```
    git clone https://github.com/yourusername/tasks-app.git
@@ -99,10 +99,10 @@ pip install -r requirements.txt
 ```
 python tasks.py
 ```
-
+---
 🤝 Contributing
 We welcome contributions! Feel free to open issues, submit pull requests, or suggest new features.
----
+
 📧 Support
 For feedback, bug reports, or support, email us at support@tasksapp.com.
----
+
