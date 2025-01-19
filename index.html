@@ -11,6 +11,7 @@
             --secondary: #ffffff;
             --accent: #3a3a3a;
             --hover: #2a2a2a;
+            --gray: #666;
         }
 
         * {
@@ -37,6 +38,9 @@
             color: var(--secondary);
             padding: 20px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .hero {
@@ -56,11 +60,38 @@
             transform: perspective(1000px) rotateX(0deg);
         }
 
+        .feature-sections {
+            padding: 40px 0;
+        }
+
+        .feature-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 60px 0;
+            padding: 20px 0;
         }
 
         .feature-card {
@@ -84,6 +115,24 @@
             color: var(--primary);
         }
 
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
@@ -94,7 +143,7 @@
             font-weight: bold;
             transform: scale(1);
             transition: all 0.3s ease;
-            margin-top: 40px;
+            margin: 10px;
         }
 
         .cta-button:hover {
@@ -129,6 +178,55 @@
             background: var(--hover);
         }
 
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sharing-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .share-button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .share-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .email { background: #ea4335; }
+        .whatsapp { background: #25d366; }
+        .teams { background: #6264a7; }
+        .clipboard { background: #6c757d; }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -136,6 +234,14 @@
             
             .features {
                 grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .sharing-options {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -151,49 +257,135 @@
         <div class="container">
             <h1>Professional Task Management</h1>
             <p>Your all-in-one solution for staying organized and productive</p>
-            <a href="#" class="cta-button">Get Started</a>
+            <div class="button-group">
+                <a href="https://drive.google.com/file/d/1aoqfp4IohNfWttv9_FwyOTLPjqWBxWmy/view?usp=sharing" 
+                   class="cta-button" 
+                   style="background: #1c1d1c;">
+                    <i class="fas fa-download"></i> Download for Windows
+                </a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                Version 1.0.0 | Compatible with Windows 10/11
+            </p>
         </div>
     </section>
 
-    <section class="container">
-        <div class="features">
-            <div class="feature-card">
-                <i class="fas fa-tasks feature-icon"></i>
-                <h3>Task Management</h3>
-                <p>Create, edit, and delete tasks with rich details. Organize by categories and priorities with quick add feature.</p>
+    <div class="feature-sections">
+        <section class="feature-section container">
+            <h2 class="section-title">Task Management</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-tasks feature-icon"></i>
+                    <h3>Core Features</h3>
+                    <ul class="feature-list">
+                        <li>Create, edit and delete tasks</li>
+                        <li>Quick add feature for rapid entry</li>
+                        <li>One-click task completion</li>
+                        <li>Category and priority organization</li>
+                        <li>Detailed task notes</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell feature-icon"></i>
+                    <h3>Smart Reminders</h3>
+                    <ul class="feature-list">
+                        <li>Multiple reminder settings</li>
+                        <li>Flexible scheduling options</li>
+                        <li>System notifications with sound</li>
+                        <li>Snooze functionality</li>
+                        <li>Custom reminder intervals</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-filter feature-icon"></i>
+                    <h3>Advanced Organization</h3>
+                    <ul class="feature-list">
+                        <li>Multi-criteria filtering</li>
+                        <li>Custom sorting options</li>
+                        <li>Quick search functionality</li>
+                        <li>Color-coded priorities</li>
+                        <li>Smart categorization</li>
+                    </ul>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-bell feature-icon"></i>
-                <h3>Smart Reminders</h3>
-                <p>Set flexible reminders with custom scheduling options and system notifications with sound alerts.</p>
+        </section>
+
+        <section class="feature-section container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt feature-icon"></i>
+                    <h3>Calendar Integration</h3>
+                    <ul class="feature-list">
+                        <li>Built-in calendar view</li>
+                        <li>Multiple view options</li>
+                        <li>Easy date selection</li>
+                        <li>Visual task distribution</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie feature-icon"></i>
+                    <h3>Analytics</h3>
+                    <ul class="feature-list">
+                        <li>Comprehensive statistics</li>
+                        <li>Completion rate tracking</li>
+                        <li>Category distribution</li>
+                        <li>Priority analysis</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-database feature-icon"></i>
+                    <h3>Data Management</h3>
+                    <ul class="feature-list">
+                        <li>Auto-save functionality</li>
+                        <li>Import/Export options</li>
+                        <li>Automatic backups</li>
+                        <li>Data persistence</li>
+                    </ul>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-filter feature-icon"></i>
-                <h3>Advanced Filtering</h3>
-                <p>Filter and sort tasks by category, priority, status, and due date with powerful search functionality.</p>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Share Your Tasks</h2>
+                <div class="sharing-options">
+                    <a href="#" class="share-button email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="#" class="share-button whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="#" class="share-button teams">
+                        <i class="fas fa-users"></i> Teams
+                    </a>
+                    <a href="#" class="share-button clipboard">
+                        <i class="fas fa-clipboard"></i> Clipboard Copy
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <section class="benefits">
         <div class="container">
-            <h2>Why Choose Tasks App?</h2>
+            <h2>Perfect For Everyone</h2>
             <div class="benefit-grid">
                 <div class="benefit-item">
-                    <i class="fas fa-sync"></i>
-                    <h3>Regular Updates</h3>
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Professionals</h3>
                 </div>
                 <div class="benefit-item">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Robust Performance</h3>
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Students</h3>
                 </div>
                 <div class="benefit-item">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>User-friendly Design</h3>
+                    <i class="fas fa-users"></i>
+                    <h3>Teams</h3>
                 </div>
                 <div class="benefit-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Enhanced Productivity</h3>
+                    <i class="fas fa-home"></i>
+                    <h3>Personal Use</h3>
                 </div>
             </div>
         </div>
