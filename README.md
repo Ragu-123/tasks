@@ -81,8 +81,11 @@
 We’re committed to delivering **frequent updates**, **enhancements**, and **bug fixes** to make Tasks App the best productivity tool for your needs.
 
 ---
+### 📥 **Download our app**
+- [Download the Tasks App](https://ragu-123.github.io/tasks/)
 
-### 📥 **Download and Get Started**
+---
+### 📥 **To clone and Get Started**
 1. Clone the repository:
    ```
    git clone https://github.com/yourusername/tasks-app.git
