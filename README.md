@@ -89,6 +89,7 @@ We’re committed to delivering **frequent updates**, **enhancements**, and **bu
 1. Clone the repository:
    ```
    git clone https://github.com/yourusername/tasks-app.git
+   ```
 2.Install dependencies:
 ```
 pip install -r requirements.txt
