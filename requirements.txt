@@ -1,0 +1,6 @@
+ttkthemes
+pygame
+Pillow
+tkcalendar
+pyperclip
+plyer
